@@ -12,7 +12,7 @@ const Home = () => {
       <HeaderComp />
       <Content style={{ padding: '50px 50px 0' }}>
         <div className="site-layout-content">
-          <h1 className="main-title">Welcome to my cheat sheet</h1>
+          <h1 className="main-title">Welcome to my "Shpora"</h1>
           <Image src={reactImg} alt={"react"} />
         </div>
       </Content>

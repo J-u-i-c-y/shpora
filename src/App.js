@@ -3,6 +3,8 @@ import Home from './components/home';
 import Props from './components/props';
 import State from './components/state';
 import Lifecycle from './components/lifecycle';
+import Events from './components/events';
+import Keys from './components/keys';
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
@@ -18,6 +20,8 @@ class App extends React.Component {
             <Route path="/props" element={<Props />} />
             <Route path="/state" element={<State />} />
             <Route path="/lifecycle" element={<Lifecycle />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/keys" element={<Keys />} />
             <Route path='/components-page' element={() => {
               window.location.href = 'https://ru.reactjs.org/docs/components-and-props.html#function-and-class-components';
               return null;

@@ -37,9 +37,9 @@ const menuItems = [
     name: 'Events'
   },
   {
-    id: 'key',
-    link: '/key',
-    name: 'Key'
+    id: 'keys',
+    link: '/keys',
+    name: 'Keys'
   },
   {
     id: 'refs',

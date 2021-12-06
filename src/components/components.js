@@ -12,22 +12,19 @@ const Components = () => {
         <HeaderComp />
         <Content style={{ padding: '50px 50px 0' }}>
           <div className="site-layout-content">
-            <h1 className="main-title">Components page</h1>
+            <h1 className="main-title">Компоненты</h1>
             <div className="subtitle">Компоненты бывают
               <a rel="noopener noreferrer"
                 href="https://ru.reactjs.org/docs/components-and-props.html#function-and-class-components"
-                target="_blank">
-                Функциональный и Классовый
+                target="_blank"> Функциональный и Классовый
               </a>.
             </div>
-            <div className="subtitle">Функцинальный компонент</div>
             <div className="code-block">
               <pre><code>{`function Welcome(props) {
   return <h1>Привет, {props.name}</h1>;
 }`}
               </code></pre>
             </div>
-            <div className="subtitle">Классовый компонент</div>
             <div className="code-block">
               <pre><code>{`class Welcome extends React.Component {
   render() {

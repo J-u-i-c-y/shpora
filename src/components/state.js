@@ -7,12 +7,12 @@ const { Content } = Layout;
 
 const State = () => {
   return (
-    <div className="App">
+    <div className="App" >
       <Layout className="layout">
         <HeaderComp />
         <Content style={{ padding: '50px 50px 0' }}>
           <div className="site-layout-content">
-            <h1 className="main-title">State's page</h1>
+            <h1 className="main-title">Стэйт</h1>
             <div className="code-block">
               <pre><code>{`class Clock extends React.Component {
   constructor(props) {
@@ -34,9 +34,9 @@ const State = () => {
             <p>Обратите внимание, что мы передаём props базовому (родительскому) конструктору:</p>
             <div className="code-block">
               <pre><code>{`constructor(props) {
-    super(props);
-    this.state = {date: new Date()};
-  }`}
+  super(props);
+  this.state = {date: new Date()};
+}`}
               </code></pre>
             </div>
             <p>Классовые компоненты всегда должны вызывать базовый конструктор с аргументом props.</p>

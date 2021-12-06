@@ -12,14 +12,31 @@ const Lifecycle = () => {
         <HeaderComp />
         <Content style={{ padding: '50px 50px 0' }}>
           <div className="site-layout-content">
-            <h1 className="main-title">Lifecycle's page</h1>
+            <h1 className="main-title">Жизненны цикл</h1>
             <div className="subtitle">Есть 3 основных метода жизненного цикла</div>
-            <div className="subtitle">componentDidMount</div>
             <div className="code-block">
               <pre><code>{`class Clock extends React.Component {
   constructor(props) {
     super(props);
     this.state = {date: new Date()};
+  }
+
+  componentDidMount() {
+    this.timerID = setInterval(
+      () => this.tick(),
+      1000
+    );
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    // Популярный пример (не забудьте сравнить пропсы):
+    if (this.props.userID !== prevProps.userID) {
+      this.fetchData(this.props.userID);
+    }
+  }
+
+  componentWillUnmount() {
+    alert("The component named Header is about to be unmounted.");
   }
 
   render() {
@@ -33,15 +50,17 @@ const Lifecycle = () => {
 }`}
               </code></pre>
             </div>
-            <p>Обратите внимание, что мы передаём props базовому (родительскому) конструктору: </p>
-            <div className="code-block">
-              <pre><code>{`constructor(props) {
-    super(props);
-    this.state = {date: new Date()};
-  }`}
-              </code></pre>
-            </div>
-            <p>Классовые компоненты всегда должны вызывать базовый конструктор с аргументом props.</p>
+            <p><code>componentDidMount()</code> вызывается сразу после монтирования (то есть, вставки компонента в DOM). В этом методе должны происходить действия, которые требуют наличия DOM-узлов. Это хорошее место для создания сетевых запросов.</p>
+            <p>В <code>componentDidUpdate()</code> <b>можно вызывать <code>setState()</code></b>, однако его <b>необходимо обернуть в условие</b>,
+              как в примере выше, чтобы не возник бесконечный цикл. Вызов <code>setState()</code> влечет за собой дополнительный рендер,
+              который незаметен для пользователя, но может повлиять на производительность компонента.
+              Вместо «отражения» пропсов в состоянии рекомендуется использовать пропсы напрямую.</p>
+            <p><code>componentWillUnmount()</code> вызывается непосредственно перед размонтированием и удалением компонента.
+              В этом методе выполняется необходимый сброс: отмена таймеров, сетевых запросов и подписок,
+              созданных в <code>componentDidMount()</code>.</p>
+            <p>Не используйте <code>setState()</code> в <code>componentWillUnmount()</code>,
+              так как компонент никогда не рендерится повторно. После того,
+              как экземпляр компонента будет размонтирован, он никогда не будет примонтирован снова.</p>
           </div>
         </Content>
         <FooterComp />

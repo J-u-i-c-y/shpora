@@ -12,7 +12,7 @@ const Props = () => {
         <HeaderComp />
         <Content style={{ padding: '50px 50px 0' }}>
           <div className="site-layout-content">
-            <h1 className="main-title">Props' page</h1>
+            <h1 className="main-title">Пропсы</h1>
             <div className="code-block">
               <pre><code>{`function Welcome(props) {
   return <h1>Привет, {props.name}</h1>;
