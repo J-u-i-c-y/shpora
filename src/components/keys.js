@@ -12,7 +12,7 @@ const Keys = () => {
         <HeaderComp />
         <Content style={{ padding: '50px 50px 0' }}>
           <div className="site-layout-content">
-            <h1 className="main-title">Обработка событий</h1>
+            <h1 className="main-title">Ключи</h1>
             <p>Ключи помогают React определять, какие элементы были изменены, добавлены или удалены.
               Их необходимо указывать, чтобы React мог сопоставлять элементы массива с течением времени:</p>
             <div className="code-block">
