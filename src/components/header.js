@@ -72,8 +72,8 @@ const menuItems = [
     name: 'useEffect'
   },
   {
-    id: 'fragrouterment',
-    link: '/fragrouterment',
+    id: 'router',
+    link: '/router',
     name: 'Router'
   },
   {

@@ -9,6 +9,9 @@ import Refs from './components/refs';
 import Async from './components/async';
 import Dom from './components/dom';
 import Fragment from './components/fragment';
+import Memo from './components/memo';
+
+import Router from './components/router';
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
@@ -30,6 +33,9 @@ class App extends React.Component {
             <Route path="/async" element={<Async />} />
             <Route path="/dom" element={<Dom />} />
             <Route path="/fragment" element={<Fragment />} />
+            <Route path="/memo" element={<Memo />} />
+
+            <Route path="/router" element={<Router />} />
             <Route path='/components-page' element={() => {
               window.location.href = 'https://ru.reactjs.org/docs/components-and-props.html#function-and-class-components';
               return null;

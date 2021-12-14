@@ -11,7 +11,7 @@
   to {transform:rotate(360deg);}
 }
 
-p {
+p, ul {
   font-size: 18px;
   line-height: 24px;
 }
